@@ -1,6 +1,6 @@
 ﻿using BuildingBlocks.CQRS;
 using Catalog.API.Models;
-using MediatR;
+
 
 namespace Catalog.API.Products
 {
@@ -10,7 +10,7 @@ namespace Catalog.API.Products
 
     public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResult>
     {
-        public Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
+        public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
             // Create product entity from command object
             // save to database
